@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Product screen: Search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.9/datatables.min.css" />
+<script type="text/javascript"
+	src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.9/datatables.min.js"></script>-->
+
+<!--How Spring Boot find static content?
+	https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-spring-mvc-static-content
+	We can change the locations with spring.resources.static-locations property-->
+<link rel="stylesheet" type="text/css"
+	href="/js/DataTables/datatables.min.css" />
+<script type="text/javascript" src="/js/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/js/product.js"></script>
+<script>
+	$(document).ready(function() {
+
+	});
+</script>
+<style>
+div.pos-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -250px;
+	margin-top: -150px;
+	width: 500px;
+	height: 300px;
+}
+</style>
+</head>
+<body>
+	<div class="pos-center">
+		<p>Please click an option to populate the product data based on
+			different URLs:</p>
+		<ol>
+			<th:block th:each="link : ${urlList}">
+				<li><a href="product/list.html" th:href="${link.getValue()}"
+					th:text="${link.getKey()}">${link.getKey()}</a></li>
+			</th:block>
+		</ol>
+	</div>
+</body>
+</html>

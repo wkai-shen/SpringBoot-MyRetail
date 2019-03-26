@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="com.myRetail.SpringBoot-MyRetail.main" target="1.8" />
+      <module name="com.myRetail.SpringBoot-MyRetail.test" target="1.8" />
+      <module name="myRetail.SpringBoot-MyRetail.main" target="1.8" />
+      <module name="myRetail.SpringBoot-MyRetail.test" target="1.8" />
+      <module name="SpringBoot-MyRetail.main" target="1.8" />
+      <module name="SpringBoot-MyRetail.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
