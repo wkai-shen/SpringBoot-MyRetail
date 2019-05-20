@@ -4,9 +4,9 @@ import com.google.common.collect.Lists;
 import com.myRetail.persistence.dao.ProductRepository;
 import com.myRetail.persistence.model.Product;
 import com.myRetail.persistence.model.Product.CategoryEnum;
-import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.util.Pair;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -102,12 +102,12 @@ public class ProductController {
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
 	public ModelAndView getDemo() {
 		List<Pair<String, String>> urlList = Lists.newArrayListWithCapacity(10);
-		urlList.add(new Pair("Find all products", "http://localhost:" + servicePort + "/products/v1/"));
-		urlList.add(new Pair("Find the products by one category", "http://localhost:" + servicePort + "/products/v1?category=FOOD"));
-		urlList.add(new Pair("Find the products by multiple categories", "http://localhost:" + servicePort + "/products/v1?category=FOOD&category=TOOL"));
-		urlList.add(new Pair("Find one product by its ID", "http://localhost:" + servicePort + "/products/v1/22"));
-		urlList.add(new Pair("Find the products by multiple IDs", "http://localhost:" + servicePort + "/products/v1/30,22,1,15,33,10,38"));
-		urlList.add(new Pair("Find the products by multipe IDs and categories", "http://localhost:" + servicePort + "/products/v1/30,22,1,15,33,10,38?category=BABY&category=TOOL"));
+		urlList.add(Pair.of("Find all products", "http://localhost:" + servicePort + "/products/v1/"));
+		urlList.add(Pair.of("Find the products by one category", "http://localhost:" + servicePort + "/products/v1?category=FOOD"));
+		urlList.add(Pair.of("Find the products by multiple categories", "http://localhost:" + servicePort + "/products/v1?category=FOOD&category=TOOL"));
+		urlList.add(Pair.of("Find one product by its ID", "http://localhost:" + servicePort + "/products/v1/22"));
+		urlList.add(Pair.of("Find the products by multiple IDs", "http://localhost:" + servicePort + "/products/v1/30,22,1,15,33,10,38"));
+		urlList.add(Pair.of("Find the products by multipe IDs and categories", "http://localhost:" + servicePort + "/products/v1/30,22,1,15,33,10,38?category=BABY&category=TOOL"));
 
 		ModelAndView modelAndView = new ModelAndView("productDemo");
 		modelAndView.addObject("urlList", urlList);

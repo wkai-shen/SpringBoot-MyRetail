@@ -38,8 +38,8 @@ div.pos-center {
 			different URLs:</p>
 		<ol>
 			<th:block th:each="link : ${urlList}">
-				<li><a href="product/list.html" th:href="${link.getValue()}"
-					th:text="${link.getKey()}">${link.getKey()}</a></li>
+				<li><a href="product/list.html" th:href="${link.getSecond()}"
+					th:text="${link.getFirst()}">${link.getKey()}</a></li>
 			</th:block>
 		</ol>
 	</div>
